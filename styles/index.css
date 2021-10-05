@@ -1,0 +1,38 @@
+.wrapper {
+  background-color: #ffffff;
+  padding: 1% 2%;
+}
+
+.notes {
+  width: 100%;
+}
+
+.notes__header {
+  background-color: #999999;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.notes__header td:last-child {
+  text-align: right;
+}
+
+.notes__item {
+  background-color: #E8EAF5;
+}
+
+.notes__create {
+  margin: 30px 0px 100px;
+  float: right;
+}
+
+.categories {
+  width: 100%;
+}
+
+.categories__header {
+  background-color: #999999;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+/*# sourceMappingURL=index.css.map */
