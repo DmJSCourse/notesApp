@@ -10,6 +10,25 @@
     <script src="https://kit.fontawesome.com/dac4471140.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="inputs hidden">
+        <form class="inputs__form">
+            <div class="inputs__radioButtons">
+                <label for="category">Select Note Category:</label><br>
+                <input type="radio" name="category" id="category" value="Idea" checked><i class="fas fa-lightbulb"></i>
+                <input type="radio" name="category" id="category" value="Random Thought"><i class="fas fa-head-side-virus"></i>
+                <input type="radio" name="category" id="category" value="Task"><i class="fas fa-tasks"></i>
+                <br>
+                <label for="status">Select Note Status:</label><br>
+                <input type="radio" name="status" id="status" value="active" checked>Active
+                <input type="radio" name="status" id="status" value="archived">Archived
+            </div>
+            <label for="name">Title:</label><br>
+            <input type="text" class="inputs__title" id="name" placeholder="Note to self"><br>
+            <label for="content">Description:</label><br>
+            <textarea name="content" id="content" class="inputs__content" placeholder="Do this today!"></textarea><br>
+            <button class="inputs__okButton" id="okButton">OK</button>
+        </form>
+    </div>
     <div class="wrapper">
         <table class="notes">
             <thead>
@@ -42,6 +61,13 @@
             </thead>
             <tbody class="notes__list">
             </tbody>
+            <tr>
+                <td colspan="7">
+                    <button class="notes__create">
+                        Create Note
+                    </button>
+                </td>
+            </tr>
         </table>
 
         <table class="categories">

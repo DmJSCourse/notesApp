@@ -9,24 +9,17 @@ let notes = [
 ];
 
 import { displayNote }  from "./displayNote.js";
+import { editNote } from "./editNote.js";
 
 const notesTable = document.getElementsByClassName('notes__list');
 const categoriesTable = document.getElementsByClassName('categories__list');
+const newNoteButton = document.querySelector('.notes__create');
 
-const displayNotes = () => {
-    notes
+export const displayNotes = (notesList) => {
+    notesList
         .filter(note => note.state === "active")
         .map(note => displayNote(note.id, note.name, note.created, note.category, note.content, note.dates))
-        .forEach(note => notesTable[0].innerHTML += note)
-
-        notesTable[0].innerHTML += `
-            <tr>
-                <td colspan="7">
-                    <button class="notes__create">
-                        Create Note
-                    </button>
-                </td>
-            </tr>`;
+        .forEach(note => notesTable[0].insertAdjacentHTML('beforeend', note));
 }
 
 const displayCategories = () => {
@@ -44,7 +37,7 @@ const displayCategories = () => {
                         archivedCount++;
                         break;
                     default:
-                        throw "Invalid state of note";
+                        throw "Invalid state";
                 }
             }
         }
@@ -60,5 +53,9 @@ const displayCategories = () => {
     })
 }
 
-displayNotes();
+newNoteButton.addEventListener('click', () => {
+    editNote(null, notes);
+});
+
+displayNotes(notes);
 displayCategories();
