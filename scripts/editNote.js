@@ -1,5 +1,5 @@
 import { displayNotes } from "./index.js";
-import { displayCategories } from "./index.js";
+import { displayCategories } from "./displayCategories.js";
 
 const monthNames = [
     "January", 
@@ -70,7 +70,6 @@ export function editNote(itemId, list) {
                 content: content.value, 
                 dates: findDates(content.value),
             })
-            console.log(findDates(content.value))
         } else {
             let editedItem = list.find(entry => entry.id === itemId);
             editedItem.state = "active";

@@ -12,12 +12,22 @@ $baseline-margin: 20px;
     margin-bottom: 20px;
 }
 
-* {
-    font-size: $baseline-margin;
-    
-    table {
-        border-collapse: collapse;
+@mixin tableStyle {
+    width: $table-width;
+    border-collapse:separate; 
+    border-spacing:0 10px;
+
+    &__icon {
+        text-align: center;
     }
+
+    &__item {
+        background-color: $table-background-color;
+    }
+}
+
+* {
+    font-size: 20px;
 }
 
 .wrapper {
@@ -79,7 +89,7 @@ $baseline-margin: 20px;
 }
 
 .notes {
-    width: $table-width;
+    @include tableStyle;
 
     &__header{
         @include header;
@@ -90,7 +100,13 @@ $baseline-margin: 20px;
     }
 
     &__item {
-        background-color: $table-background-color;
+        td:last-child {
+            text-align: right;
+        }
+
+        &:hover {
+            background-color: $table-header-color;
+        }
     }
 
     &__create{
@@ -100,7 +116,7 @@ $baseline-margin: 20px;
 }
 
 .categories {
-    width: $table-width;
+    @include tableStyle;
 
     &__header{
         @include header;
